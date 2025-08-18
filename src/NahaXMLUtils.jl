@@ -2,24 +2,40 @@ module NahaXMLUtils
 
 using XML
 using Printf
+using OrderedCollections
+
+export Bounds, bounds_to_viewbox, elt
 
 const SVG_NAMESPACE = "http://www.w3.org/2000/svg"
 
+Base.@kwdef struct Bounds
+    minX::Real
+    maxX::Real
+    minY::Real
+    maxY::Real
+end
+
+
+"""
+    bounds_to_viewbox(::Bounds)
+
+Returns a vector of `Pair`s which provide the `viewBox`, `width` and
+`height` attributes to [`elt`](@ref) for an `svg` element.
+"""
 function bounds_to_viewbox(bounds::Bounds)
     # bounds is in terms of coordinate system units:
-    width = DANCER_SVG_SIZE * abs(bounds.max_left - bounds.min_left)
-    height = DANCER_SVG_SIZE * abs(bounds.max_down - bounds.min_down)
+    width = abs(bounds.maxY - bounds.minY)
+    height = abs(bounds.maxX - bounds.minX)
     [
         "viewBox" =>
             @sprintf("%3.3f %3.3f %3.3f %3.3f",
-                     DANCER_SVG_SIZE * bounds.min_left,
-                     DANCER_SVG_SIZE * bounds.min_down,
+                     bounds.minY,
+                     bounds.minX,
                      width, height),
-        "width" => "$width$SVG_SIZE_UNITS",
-        "height" => "$height$SVG_SIZE_UNITS"
+        "width" => "$width",
+        "height" => "$height"
     ]
 end
-
 
 include("elt.jl")
 
