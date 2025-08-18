@@ -4,9 +4,11 @@ authors = ["MarkNahabedian <naha@mit.edu> and contributors"]
 version = "1.0.0-DEV"
 
 [deps]
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 XML = "72c71f33-b9b6-44de-8c94-c961784809e2"
 
 [compat]
+Printf = "1.11.0"
 XML = "0.3.6"
 julia = "1.6.7"
 
