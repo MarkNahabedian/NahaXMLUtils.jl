@@ -10,7 +10,7 @@ export SVG_NAMESPACE, Bounds, bounds_to_viewbox, elt
 
 # XML namespaces I care about:
 const SVG_NAMESPACE = "http://www.w3.org/2000/svg"
-SHAPER_NAMESPACE = "http://www.shapertools.com/namespaces/shaper"
+const SHAPER_NAMESPACE = "http://www.shapertools.com/namespaces/shaper"
 
 Base.@kwdef struct Bounds
     minX::Real
