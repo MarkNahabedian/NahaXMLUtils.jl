@@ -6,11 +6,15 @@ version = "1.0.0-DEV"
 [deps]
 OrderedCollections = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
 Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
+UnitfulUS = "7dc9378f-8956-57ef-a780-aa31cc70ff3d"
 XML = "72c71f33-b9b6-44de-8c94-c961784809e2"
 
 [compat]
 OrderedCollections = "1.8.1"
 Printf = "1.11.0"
+Unitful = "1.24.0"
+UnitfulUS = "0.2.0"
 XML = "0.3.6"
 julia = "1.6.7"
 

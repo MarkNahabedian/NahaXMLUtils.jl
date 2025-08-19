@@ -3,6 +3,8 @@ module NahaXMLUtils
 using XML
 using Printf
 using OrderedCollections
+using Unitful
+using UnitfulUS
 
 export Bounds, bounds_to_viewbox, elt
 
