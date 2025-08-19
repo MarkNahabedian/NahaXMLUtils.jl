@@ -37,6 +37,7 @@ function bounds_to_viewbox(bounds::Bounds)
     ]
 end
 
+include("svgval.jl")
 include("elt.jl")
 
 end
